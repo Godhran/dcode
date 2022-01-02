@@ -24,7 +24,8 @@ const SVGInputRow = () => {
                               fontFamily={'Major Mono Display'}
                               y={'50%'}
                               textAnchor={'middle'}
-                              alignmentBaseline={'central'}>
+                              alignmentBaseline={'middle'}
+                              dominantBaseline={'middle'}>
                             {letter.toLowerCase()}
                         </text>
                     </svg>

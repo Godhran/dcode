@@ -56,7 +56,11 @@ const actions = {
                     }
                     resolve(false)
                 } else {
-                    const {word, definition} = resp;
+                    const {
+                        // word,
+                        definition
+                    } = resp;
+                    let word = "TEST"
                     dispatch({type: SET_TARGET_WORD, value: {word, definition}});
                     // dispatch({type: SET_GUESSED_WORD, value: {letter,index}});
                     resolve(true)

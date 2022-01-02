@@ -50,7 +50,8 @@ const PreviousGuessRow = ({rowIndex, previousGuess}) => {
                               y={'50%'}
                               fontSize={20}
                               textAnchor={'middle'}
-                              alignmentBaseline={'central'}
+                              alignmentBaseline={'middle'}
+                              dominantBaseline={'middle'}
                               fill={getFontStyle(letter, index)}
                         >
                             {letter.toLowerCase()}

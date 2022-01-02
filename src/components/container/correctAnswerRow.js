@@ -28,7 +28,8 @@ const CorrectAnswerRow = () => {
                               y={'50%'}
                               textAnchor={'middle'}
                               fontSize={20}
-                              alignmentBaseline={'central'}
+                              alignmentBaseline={'middle'}
+                              dominantBaseline={'middle'}
                               fill={Colours.palettes['a'].backgroundColor}
                         >
                             {letter.toLowerCase()}
