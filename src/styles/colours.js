@@ -1,0 +1,30 @@
+module.exports = {
+  white:'#FFFFFF',
+  blue:'#00A9E0',
+  palettes:{
+    a:{
+      backgroundColor:"#344E5C",
+      accent:"#EFC958",
+      correctPosition:"#4AB19D",
+      wrongPosition:"#E17A47",
+    },
+    b:{
+      backgroundColor:"#765d69",
+      accent:"#FEFAD4",
+      correctPosition:"#8FB9A8",
+      wrongPosition:"#F1828D",
+    },
+    c:{
+      backgroundColor:"#325D79",
+      accent:"#EFEEEE",
+      correctPosition:"#9BD7D1",
+      wrongPosition:"#F26627",
+    },
+    d:{
+      backgroundColor:"#4d5E72",
+      accent:"#DDA5B6",
+      correctPosition:"#F2CC8C",
+      wrongPosition:"#3F6A8A",
+    }
+  }
+}
