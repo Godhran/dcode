@@ -16,7 +16,7 @@ const useWord = (window) => {
 
         const setGuessedLetter = (letter, index) => {
             dispatch({type: SET_LOADING, loading: true});
-            return new Promise(async (resolve, reject) => {
+            return new Promise(async (resolve) => {
                 dispatch(WordActions.setGuessedLetter(letter, index)).then(resp => {
                     setErrors({});
                     dispatch({type: SET_LOADING, loading: false});
@@ -31,7 +31,7 @@ const useWord = (window) => {
         };
 
         const onClickKeyboardLetter = (letter) => {
-            return new Promise(async (resolve, reject) => {
+            return new Promise(async (resolve) => {
                 if (guessedWord.replace(/ /g, '').length < targetWord.length) {
                     dispatch(WordActions.onClickKeyboardLetter(letter)).then(resp => {
                         resolve(resp)
@@ -45,7 +45,7 @@ const useWord = (window) => {
         };
 
         const onClickKeyboardBackspace = (letter) => {
-            return new Promise(async (resolve, reject) => {
+            return new Promise(async (resolve) => {
                 dispatch(WordActions.onClickKeyboardBackspace(letter)).then(resp => {
                     resolve(resp)
                 }, (error) => {
@@ -55,7 +55,7 @@ const useWord = (window) => {
         };
 
         const onClickKeyboardEnter = () => {
-            return new Promise(async (resolve, reject) => {
+            return new Promise(async (resolve) => {
                 if (guessedWord.replace(/ /g, '').length === targetWord.length) {
                     dispatch(WordActions.onClickKeyboardEnter(guessedWord, targetWord)).then(resp => {
                         resolve(resp)
@@ -70,7 +70,7 @@ const useWord = (window) => {
 
         const getTargetWord = (length) => {
             dispatch({type: SET_LOADING, loading: true});
-            return new Promise(async (resolve, reject) => {
+            return new Promise(async (resolve) => {
                 dispatch(WordActions.getTargetWord(length)).then(resp => {
 
                     setErrors({});
@@ -87,7 +87,7 @@ const useWord = (window) => {
 
         const getNewTargetWord = () => {
             dispatch({type: SET_LOADING, loading: true});
-            return new Promise(async (resolve, reject) => {
+            return new Promise(async (resolve) => {
                 dispatch(WordActions.getNewTargetWord(targetWord.length)).then(resp => {
                     setErrors({});
                     dispatch({type: SET_LOADING, loading: false});

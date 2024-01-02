@@ -1,47 +1,53 @@
-import {Grow} from "@mui/material";
+import { Grow } from "@mui/material";
 import Colours from "../../styles/colours";
-import {useEffect, useState} from "react";
+import { useEffect, useState } from "react";
 import useWord from "../../hooks/hooks.word";
 
+const copy = {
+  buttonLabel: "continue",
+};
+
+const testID = {
+  ContinueButton: "dcode-continue-button",
+};
+
 const ContinueButton = () => {
-    const {
-        getNewTargetWord,
-    } = useWord(window);
+  const { getNewTargetWord } = useWord(window);
 
-    const [open, setOpen] = useState(false)
+  const [open, setOpen] = useState(false);
 
-    useEffect(() => {
-        startTimer();
-    }, []);
+  useEffect(() => {
+    startTimer();
+  }, []);
 
-    const startTimer = () => {
-        const interval = setInterval(() => {
-            setOpen(true);
-        }, 500);
+  const startTimer = () => {
+    const interval = setInterval(() => {
+      setOpen(true);
+    }, 500);
 
-        return () => clearInterval(interval); // This represents the unmount function, in which you need to clear your interval to prevent memory leaks.
-    }
+    return () => clearInterval(interval);
+  };
 
-    return (
-        <Grow in={open} mountOnEnter unmountOnExit>
-            <div
-                className={'my-3 next-button mx-auto'}
-                style={{
-                    backgroundColor: Colours.palettes['a'].accent,
-                    color: Colours.palettes['a'].backgroundColor,
-                    maxWidth: 160
-                }}
-                onClick={() => {
-                    setOpen(false)
-                    setTimeout(() => {
-                        getNewTargetWord().then();
-                    }, 500)
-                }}
-            >
-                continue
-            </div>
-        </Grow>
-    )
-}
+  return (
+    <Grow in={open} mountOnEnter unmountOnExit data-testid={testID.ContinueButton}>
+      <div
+        className={"my-3 next-button mx-auto"}
+        style={{
+          backgroundColor: Colours.palettes["a"].accent,
+          color: Colours.palettes["a"].backgroundColor,
+          maxWidth: 160,
+        }}
+        onClick={() => {
+          setOpen(false);
+          setTimeout(() => {
+            getNewTargetWord();
+          }, 500);
+        }}
+      >
+        {copy.buttonLabel}
+      </div>
+    </Grow>
+  );
+};
 
-export default ContinueButton
+export default ContinueButton;
