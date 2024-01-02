@@ -2,7 +2,7 @@
   "name": "dcode",
   "version": "0.1.0",
   "private": true,
-  "homepage": "https://dcode.godhran.com",
+  "homepage": "http://dcode.godhran.com",
   "engines": {
     "node": "14.18.1",
     "npm": "6.14.15"
