@@ -1,5 +1,5 @@
 let config= {
-  api: 'https://dcode-api.herokuapp.com/',
+  api: 'https://dcode-api.onrender.com/',
   version:'0.0.1',
 
   //False stops all firebase, bugsnag, etc.
