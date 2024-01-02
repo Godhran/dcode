@@ -7,7 +7,7 @@ const size = 35;
 const LoadingOverlay = () => {
   return (
     <div className={"loading-overlay"}>
-      <div className={"loading-animation"}>
+      <div className={"loading-animation"} style={{maxWidth:'80vw'}}>
         <div className="pt-5">
           <p>
             This project uses <a href="https://render.com/">Render.com</a> and may take some time for the free
